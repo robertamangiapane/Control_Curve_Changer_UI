@@ -107,7 +107,9 @@ def scriptUI():
 
         if typeObj != "mesh" and typeObj != "nurbsCurve":
             raise Exception("You must select a MESH or CURVE as new control")
-
+            
+        #'xform' to get the world space translate values
+        
         positionAbsolute = cmds.xform(selection[0], q=True, rp=True)
         print positionAbsolute
         cmds.move(positionAbsolute[0], positionAbsolute[1], positionAbsolute[2], shapeObj, a=True)
